@@ -1,0 +1,82 @@
+<!--<tr>
+  <td class="gravatar">
+    <%= link_to gravatar_for(feed_item.user), feed_item.user %>
+  </td>
+  <td class="micropost">
+    <span class="user">
+      <%= link_to feed_item.user.name, feed_item.user %>
+    </span>
+    <span class="content"><%= wrap(feed_item.content) %></span>
+    <span class="timestamp">
+      Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
+    </span>
+  </td>
+  <% if current_user?(feed_item.user) %>
+    <td>
+      <%= link_to "delete", feed_item, :method => :delete,
+                                       :confirm => "You sure?",
+                                       :title => feed_item.content %>
+    </td>
+  <% end %>
+</tr>--!>
+<style type="text/css">
+.stbody{
+	min-height:70px;
+	margin-bottom:10px;
+	border-bottom:1px solid #d0d0d0;
+	width:385px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.stimg{
+	float:left;
+	height:50px;
+	width:50px;
+	border:solid 1px #dedede;
+	padding:5px;
+}
+.sttext{
+	margin-left:70px;
+	min-height:50px;
+	word-wrap:break-word;
+	overflow:hidden;
+	padding:5px;
+	display:block;
+	font-family:"Arial";
+	font-size:13px;
+}
+.sttime{
+	font-size:10px;
+	color:#999;
+	font-family:"Arial";
+	margin-top:5px;
+}
+.delete{
+	float:right;
+	margin-right:15px;
+	color:#999;
+	font-size:12px;
+}
+.name{
+	margin-left:75px;
+}
+</style>
+<div class="stbody"> 
+<div class="stimg"> 
+<%= link_to gravatar_for(feed_item.user), feed_item.user %>
+</div>
+<div class="name">
+<%= link_to feed_item.user.name, feed_item.user %>
+</div>
+<div class="delete">
+<% if current_user?(feed_item.user) %>
+      <%= link_to "delete", feed_item, :method => :delete,
+                                       :confirm => "You sure?",
+                                       :title => feed_item.content %>
+  <% end %>
+</div>
+<div class="sttext"> 
+<%= wrap(feed_item.content) %>
+<div class="sttime"><%= time_ago_in_words(feed_item.created_at) %> ago</div> 
+</div> 
+</div>

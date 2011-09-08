@@ -1,0 +1,21 @@
+<h1>Listing games</h1>
+
+<table>
+  <tr>
+    <th>Item1</th>
+    <th>Item2</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @games.each do |game| %>
+  <tr>
+    <td><%= game.item1 %></td>
+    <td><%= game.item2 %></td>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Game', new_game_path %>

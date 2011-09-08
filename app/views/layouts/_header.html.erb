@@ -1,0 +1,149 @@
+<!--<header>
+  <%= link_to logo, root_path %>
+  <nav class="round">
+    <ul>
+      <li><%= link_to "Home", root_path %></li>
+      <% if signed_in? %>
+        <li><%= link_to "Profile", current_user %></li>
+        <li><%= link_to "Users", users_path %></li>
+        <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+      <% end %>
+      <li><%= link_to "Help", help_path %></li>
+      <% if signed_in? %>
+        <li><%= link_to "Sign out", signout_path %></li>
+      <% else %>
+        <li><%= link_to "Sign in", signin_path %></li>
+      <% end %>
+    </ul>
+  </nav>
+</header>--!>
+<style type="text/css">
+/*CSS RESET*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+body {
+	line-height: 1;
+	color: black;
+	background: white;
+}
+ol, ul {
+	list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+ 
+strong {
+	font-weight:bold;color:#0289ce;
+}
+ 
+em {
+	font-style:oblique;
+}
+ 
+p {
+	margin:15px 0;
+}
+ 
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}
+ 
+
+ 
+	.wrap {
+		position:relative;
+		margin:0 auto;
+		width:900px;
+	}
+	
+	#header {
+		width:100%;
+		height:50px;
+		background:#f7f7f7;
+		border-bottom:1px solid #dfe2e7;
+	}
+	
+	.logo{
+		padding-top:5px;
+		float:left;
+	}
+	.menu{
+		float:right;
+		padding-top:15px;
+	}
+	.menu ul{
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+
+.menu ul li{ display: inline; }
+
+.menu ul li a
+{
+text-decoration: none;
+padding: .2em;
+}
+</style>
+<div id="header"> 
+	<div class="wrap"> 
+    	 <div class="logo">
+    	 	<%= link_to logo, root_path %>
+    	 </div>
+    	 <div class="menu">
+    	 	<ul>
+     		 <li><%= link_to "Home", root_path %></li>
+     		 <% if signed_in? %>
+        	<li><%= link_to "Profile", current_user %></li>
+        	<li><%= link_to "Settings", edit_user_path(current_user) %></li>
+      		<% end %>
+      		<% if signed_in? %>
+        	<li><%= link_to "Logout", signout_path %></li>
+      		<% else %>
+       		 <li><%= link_to "Sign in", signin_path %></li>
+      		<% end %>
+    	</ul>
+    	</div>
+    </div> 
+</div> 

@@ -1,159 +1,24 @@
 <% if signed_in? %>
-<style style type="text/css">
-	#container{
-		width:803px;
-		min-height:600px;
-		margin-left:auto;
-		margin-right:auto;
-		margin-top:30px;
-	}
-	#left{
-		float:left;
-		width:400px;
-		min-height:600px;
-		border-right:1px solid #d0d0d0;
-	}
-	.post-header{
-		font-family:"Arial", Bold;
-		font-size:18px;
-		color:#484848;
-	}
-	#post{
-		padding-top:15px;
-	}
-	#feed{
-		margin-top:25px;
-	}
-	#right{
-		float:right;
-		width:400px;
-		height:600px;
-	}
-	.featured-header{
-		font-family:"Arial", Bold;
-		font-size:18px;
-		color:#484848;
-		padding-left:10px;
-	}
-</style>
-<div id="container">
+<div class="container">
 	<div id="left">
-		<div class="post-header">
-			What's Up?
+		<div class="left-header">
+			<h2>What's Up?</h2>
 		</div>
-		<div id="post">	
+		<div class="form">
 			<%= render 'shared/micropost_form' %>
 		</div>
-		<div class="post-header">
-			Most Recent Yaps
-		</div>
-		<div id="feed">
+		<div class="seperator"></div>
+		<div class="feed">
 			<%= render 'shared/feed' %>
 		</div>
 	</div>
 	<div id="right">
-		<div class="featured-header">
-			Today's Featured Games
+		<div class="right-header">
+			<h3>Today's Featured Games</h3>
 		</div>
 	</div>
 </div>
-
 <% else %>
-<style type="text/css">
-	/*CSS RESET*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-weight: inherit;
-	font-style: inherit;
-	font-size: 100%;
-	vertical-align: baseline;
-}
-:focus {
-	outline: 0;
-}
-ol, ul {
-	list-style: none;
-}
-caption, th, td {
-	text-align: left;
-	font-weight: normal;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: "";
-}
-blockquote, q {
-	quotes: "" "";
-}
-.aligncenter, div.aligncenter {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-.alignleft {
-	float: left;
-}
-.alignright {
-	float: right;
-} 
-	.wrap {
-		position:relative;
-		margin:0 auto;
-		width:900px;
-	}
-	
-	#newuser {
-		width:100%;
-		height:280px;
-		border-bottom:1px solid #dfe2e7;
-		background-image:url("/images/middle.png");
-		background-repeat:repeat-x;
-		border-bottom:1px solid #d0d0d0;
-	}
-	#bottom{
-		width:100%;
-		height:130px;
-		background-image:url("/images/bottom.png");
-		background-repeat:repeat-x;
-	}
-	.bottom-left{
-		width:500px;
-		height:280px;
-		float:left;
-	}
-	.newtitle{
-		font-size:28px;
-		font-family:"Arial";
-		padding-top:25px;
-	}
-	.newdesc{
-		color:#4e4e4e;
-		font-family:"Helvetica";
-		font-size:14px;
-		padding-top:10px;
-	}
-	.app{
-		padding-top:10px;
-		float:left;
-	}
-	.feat{
-		padding-top:10px;
-	}
-	.online{
-		padding-top:10px;
-		float:left;
-	}
-</style>
 <div id="newuser">
 	<div class="wrap">
 		<div class="bottom-left">

@@ -1,4 +1,4 @@
-<table class="profile" summary="Profile information">
+<!--<table class="profile" summary="Profile information">
   <tr>
     <td class="main">
       <h1>
@@ -20,5 +20,33 @@
       <%= render 'shared/stats' %>
     </td>
   </tr>
-</table>
+</table>--!>
+<div class="container">
+<div id="profile-left">
+	<div class="user-top">
+		<div class="user-photo">
+			<%= gravatar_for @user %>
+		</div>
+		<div class="user-name">
+			<h1><%= @user.name %></h1>
+		</div>
+	</div>
+		<div class="user-header">
+			<h3>Recent Yaps</h3>
+		</div>
+		<div class="user-posts">
+			<% if @user.microposts.any? %>
+        	<table class="microposts" summary="User microposts">
+        	  <%= render @microposts %>
+        	</table>
+        	<%= will_paginate @microposts %>
+      	<% end %>
+      </div>
+</div>
+<div id="profile-right">
+<%= render 'follow_form' if signed_in? %>
+<%= @user.microposts.count %>
+      <%= render 'shared/stats' %>
+</div>
+</div>
 

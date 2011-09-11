@@ -1,13 +1,18 @@
 class GamesController < ApplicationController
+
+
+
   # GET /games
   # GET /games.xml
   def index
+    
     @games = Game.all
   end
 
   # GET /games/1
   # GET /games/1.xml
   def show
+    
     @game = Game.find(params[:id])
 
     respond_to do |format|
@@ -16,6 +21,8 @@ class GamesController < ApplicationController
     end
   end
 
+
+  
   # GET /games/new
   # GET /games/new.xml
   def new
@@ -26,6 +33,8 @@ class GamesController < ApplicationController
       format.xml  { render :xml => @game }
     end
   end
+  
+
 
   # GET /games/1/edit
   def edit

@@ -10,9 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110908012526) do
+ActiveRecord::Schema.define(:version => 20110910222327) do
 
   create_table "games", :force => true do |t|
+    t.string   "votes2",     :limit => nil
+    t.string   "votes1",     :limit => nil
     t.text     "item1"
     t.text     "item2"
     t.datetime "created_at"
@@ -52,17 +54,18 @@ ActiveRecord::Schema.define(:version => 20110908012526) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
-  create_table "votes", :force => true do |t|
-    t.boolean  "vote",          :default => false
-    t.integer  "voteable_id",                      :null => false
-    t.string   "voteable_type",                    :null => false
-    t.integer  "voter_id"
+  create_table "votings", :force => true do |t|
+    t.string   "voteable_type"
+    t.integer  "voteable_id"
     t.string   "voter_type"
+    t.integer  "voter_id"
+    t.boolean  "up_vote",       :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "votes", ["voteable_id", "voteable_type"], :name => "fk_voteables"
-  add_index "votes", ["voter_id", "voter_type"], :name => "fk_voters"
+  add_index "votings", ["voteable_type", "voteable_id", "voter_type", "voter_id"], :name => "unique_voters", :unique => true
+  add_index "votings", ["voteable_type", "voteable_id"], :name => "index_votings_on_voteable_type_and_voteable_id"
+  add_index "votings", ["voter_type", "voter_id"], :name => "index_votings_on_voter_type_and_voter_id"
 
 end

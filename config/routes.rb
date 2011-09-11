@@ -1,5 +1,7 @@
 SampleApp::Application.routes.draw do
 
+  resources :votes
+
   resources :games
 
   resources :users do
@@ -7,6 +9,11 @@ SampleApp::Application.routes.draw do
       get :following, :followers
     end
   end
+  resources :games do
+      post :vote, :on => :member
+  end
+ 
+  
   
   resources :sessions,      :only => [:new, :create, :destroy]
   resources :microposts,    :only => [:create, :destroy]

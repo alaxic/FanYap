@@ -1,15 +1,24 @@
+<style type="text/css">
+.game{
+	padding-top:70px;
+}
+</style>
+<div class="game">
 <p id="notice"><%= notice %></p>
 
 <p>
   <b>Item1:</b>
   <%= @game.item1 %>
+  <%= @game.votes1 %>
 </p>
 
 <p>
   <b>Item2:</b>
   <%= @game.item2 %>
+  <%= @game.votes2 %>
 </p>
 
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>
+</div>

@@ -1,3 +1,4 @@
 class Game < ActiveRecord::Base
-	attr_accessbile :name, :item1, :item2
+	attr_accessible :name, :item1, :item2
+	has_many :votes
 end

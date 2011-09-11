@@ -1,21 +1,59 @@
-<h1>Listing games</h1>
+<!--<h1>Listing games</h1>
 
 <table>
   <tr>
     <th>Item1</th>
-    <th>Item2</th>
-    <th></th>
-    <th></th>
+    <th>Game 1 Votes</th>
+    <th>Vote</th>
+    <th>Item 2</th>
+    <th>Games 2 Votes</th>
+    <th>Vote</th>
     <th></th>
   </tr>
 
 <% @games.each do |game| %>
   <tr>
-    <td><%= game.item1 %></td>
+    <td><%= game.item1 %>
+     <td><%= game.votes1 %></td>
+</td>
     <td><%= game.item2 %></td>
+    <td><%= game.votes2 %></td>
 <% end %>
 </table>
 
-<br />
+<br />--!>
+<style tye="text/css">
+.team{
+	padding-top:70px;
+}
+.team2{
+	padding-top:70px;
+}
+table{
+	padding-top:50px;
+}
+</style>
+<div class="container">
+<table> 
+        <thead> 
+          <tr> 
+            <th>Team 1</th> 
+            <th>Votes</th> 
+            <th>Team 2</th> 
+            <th>Votes</th> 
+          </tr> 
+        </thead> 
+        <tbody> 
+          <tr> 
+          <% @games.each do |game| %>
+            <td><%= game.item1 %>
+</td> 
+            <td><%= game.votes1 %></td> 
+            <td><%= game.item2 %></td> 
+            <td><%= game.votes2 %></td> 
+          </tr> 
+        	<% end %>
+        </tbody> 
+      </table> 
+</div>
 
-<%= link_to 'New Game', new_game_path %>
